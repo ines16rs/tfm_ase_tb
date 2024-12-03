@@ -1,1 +1,1 @@
-# tfm_ase_trastorno_bipolar
+# Análisis de Expresión Alélica Específica en Trastorno Bipolar
