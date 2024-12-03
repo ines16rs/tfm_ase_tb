@@ -7,45 +7,45 @@ Este TFM se centra en investigar la expresión alélica específica (ASE) en ind
 ## Estructura del Repositorio
 
 ### 0_bfiles_to_vcf
-- **0_bfiles_to_VCFmultisample:** Conversión de archivos bfiles a formato VCF multimuesta.
-- **1_generar_22vcfs:** Generación de un archivo VCF para cada cromosoma autosómico a partir del VCF total.
+- **0_bfiles_to_VCFmultisample:** conversión de archivos bfiles a formato VCF (multimuesta).
+- **1_generar_22vcfs:** generación de un archivo VCF para cada cromosoma autosómico (1 al 22) a partir del VCF multimuestra completo.
 
 ### 1_generacion_bams
-- **0_fastqc:** Control de calidad de las lecturas de RNA-seq.
-- **1_alignment:** Alineamiento de las lecturas de RNA-seq al genoma de referencia (hg38).
-- **Run1_alignment:** Script para ejecutar el alineamiento en el centro de computación científica de la UAM.
+- **0_fastqc:** control de calidad de las lecturas de RNA-seq empleando **FastQC**.
+- **1_alignment:** alineamiento de las lecturas de RNA-seq al genoma de referencia (hg38) utilizando la herramienta **hisat2**.
+- **Run1_alignment:** script para ejecutar el alineamiento en el centro de computación científica de la UAM.
 
 ### 2_markdup_samtools
-- **2_markdup:** Eliminación aleatoria de duplicados utilizando **samtools markdup**.
+- **2_markdup:** eliminación aleatoria de duplicados utilizando **samtools markdup**.
 
 ### 3_mapping_bias
-- **0_generar_my_sample:** Generación de un archivo de texto con los identificadores de las muestras del estudio.
-- **1_VCF_to_HDF5:** Creación de archivos **HDF5** necesarios para **WASP** a partir de los VCFs de los 22 cromosomas.
-- **2_find_intersec:** Identificación de lecturas con sesgos de mapeo usando **find_intersecting_snps.py** de WASP.
-- **3_remapeo:** Remapeo de lecturas con sesgos utilizando **hisat2**.
-- **4_filtrar_remap:** Filtrado de lecturas remapeadas con **filter_remapped_reads.py** de WASP.
-- **5_merge:** Fusión, ordenación e indexación de los BAMs filtrados utilizando **samtools**.
+- **0_generar_my_sample:** generación de un archivo de texto con los identificadores de las muestras incluidas en el estudio.
+- **1_VCF_to_HDF5:** creación de los archivos **HDF5** necesarios para **WASP** a partir de los VCFs de los 22 cromosomas.
+- **2_find_intersec:** identificación de las lecturas con sesgos de mapeo potenciales usando **find_intersecting_snps.py** de WASP.
+- **3_remapeo:** remapeo de lecturas con sesgos potenciales utilizando **hisat2**.
+- **4_filtrar_remap:** filtrado de lecturas remapeadas con **filter_remapped_reads.py** de WASP.
+- **5_merge:** unión, ordenación e indexación de las lecturas que han superado los filtros anteriores, utilizando **samtools**.
 
 ### 4_allelicimbalanceR
-- **1_allelicimbalance_binom:** Análisis de ASE con **AllelicImbalance** en R: instalación de paquetes, recuento alélico, filtrado y test binomial por variante e individuo.
+- **1_allelicimbalance_binom:** análisis de ASE con **AllelicImbalance** en R: instalación de paquetes, recuento alélico, filtrado de variantes heterocigotas y lecturas mínimas, y test binomial por variante e individuo.
 
 ### 5_wilcoxon_rank_sum
-- **1_proporciones_y_wilcoxon:** Cálculo de proporciones del alelo de referencia y aplicación del test de Wilcoxon Rank Sum para comparar los grupos.
+- **1_proporciones_y_wilcoxon:** cálculo de las proporciones del alelo de referencia y aplicación del test de Wilcoxon Rank Sum para comparar la ASE de los dos grupos.
 
 ### 6_fisher_exact
-- **1_tablas_conting_y_fisher:** Generación de tablas de contingencia y test exacto de Fisher para patrones de expresión.
-- **2_generar_tabla_resumen_info:** Creación de una tabla resumen con información clave de cada variante (rsID, posición, p-valores, genes, etc.).
+- **1_tablas_conting_y_fisher:** generación de las tablas de contingencia y aplicación del test exacto de Fisher para analizar los patrones de expresión mayoritaria.
+- **2_generar_tabla_resumen_info:** creación de una tabla resumen con información clave de cada variante analizada (rsID, posición, p-valores, genes, etc.).
 
 ### 7_graficos_y_tablas
-- **1_generacion_boxplots_bams:** Creación de boxplots del número de lecturas RNA-seq en diferentes etapas de procesamiento, separadas por condición clínica.
-- **2_tabla_n_variantes_filtros:** Tabla con la distribución de variantes en cada etapa del filtrado.
-- **3_manhattan_plot_variantes:** Generación de un **Manhattan Plot** para las variantes analizadas en el test de Wilcoxon.
-- **4_locuszoom_link:** Acceso a **LocusZoom** para visualizar genes comunes en diferentes análisis.
+- **1_generacion_boxplots_bams:** creación de boxplots del número de lecturas RNA-seq en las diferentes etapas de procesamiento, separadas por condición clínica.
+- **2_tabla_n_variantes_filtros:** código para generar una tabla con la distribución de variantes en cada etapa del filtrado.
+- **3_manhattan_plot_variantes:** generación de un gráfico de tipo **Manhattan Plot** para las variantes analizadas en el test de Wilcoxon Rank Sum.
+- **4_locuszoom_link:** enlace de acceso a la herramienta **LocusZoom** para visualizar los datos de los genes comunes entre el análisis de ASE y el de *"gene-based"*.
 
 ### 8_anotacion_y_enriq_funcional
-- **0_external_gene_IDs_enrichR:** Extracción de **external_gene_IDs** para el análisis de enriquecimiento funcional con **Enrichr**.
-- **1_Enrichr_link:** Enlace a la herramienta **Enrichr** para el análisis de enriquecimiento funcional.
-- **2_VEP_Ensembl_link:** Enlace a **VEP** de Ensembl para anotación funcional (valores **CADD** y frecuencias **gnomAD**).
+- **0_external_gene_IDs_enrichR:** extracción de **external_gene_IDs** para el análisis de enriquecimiento funcional con **Enrichr**.
+- **1_Enrichr_link:** enlace a la herramienta **Enrichr** para el análisis de enriquecimiento funcional.
+- **2_VEP_Ensembl_link:** enlace a **VEP** de Ensembl para anotación funcional (valores **CADD** y frecuencias alélicas de **gnomAD**).
 
 ---
 
