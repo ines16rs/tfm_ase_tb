@@ -50,6 +50,6 @@ A continuación, se detallan las carpetas que forman este repositorio, junto con
 - **2_VEP_Ensembl_link:** enlace a **VEP** de Ensembl para anotación funcional (valores **CADD** y frecuencias alélicas de **gnomAD**).
 
 ### Manuales_y_documentación
-- Documentación (manuales, viñetas, etc.) de las principales herramientas utilizadas en el desarrollo del TFM
+- Subcarpetas con la documentación recopilada de las principales herramientas utilizadas en el desarrollo del TFM.
 ---
 
