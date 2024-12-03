@@ -1,4 +1,4 @@
-# Análisis de Expresión Alélica Específica en Trastorno Bipolar
+# Análisis de expresión alélica específica en trastorno bipolar
 
 Este TFM se centra en investigar la expresión alélica específica (ASE) en individuos con trastorno bipolar (TB), una enfermedad psiquiátrica compleja cuya base genética aún no se conoce por completo. Se han utilizado datos de RNA-seq y genotipos de individuos afectados por TB y controles sanos, con el objetivo de identificar factores genéticos implicados en la etiología y patogénesis de esta enfermedad. Este análisis podría contribuir a mejorar el diagnóstico y tratamiento del TB. Para llevar a cabo el estudio, se han empleado herramientas bioinformáticas como **WASP** y **AllelicImbalance**.
 
