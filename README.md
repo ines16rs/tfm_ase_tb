@@ -4,7 +4,9 @@ Este TFM se centra en investigar la expresión alélica específica (ASE) en ind
 
 ---
 
-## Estructura del Repositorio
+## Contenido del este repositorio
+
+A continuación, se detallan las carpetas que forman este repositorio, junto con una breve descripción de los archivos que contiene cada una de ellas:
 
 ### 0_bfiles_to_vcf
 - **0_bfiles_to_VCFmultisample:** conversión de archivos bfiles a formato VCF (multimuesta).
@@ -47,5 +49,7 @@ Este TFM se centra en investigar la expresión alélica específica (ASE) en ind
 - **1_Enrichr_link:** enlace a la herramienta **Enrichr** para el análisis de enriquecimiento funcional.
 - **2_VEP_Ensembl_link:** enlace a **VEP** de Ensembl para anotación funcional (valores **CADD** y frecuencias alélicas de **gnomAD**).
 
+### Manuales_y_documentación
+- Documentación (manuales, viñetas, etc.) de las principales herramientas utilizadas en el desarrollo del TFM
 ---
 
