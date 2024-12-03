@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Comprimir el archivo VCF inicial
+bgzip vcf_multi20_NamesOk.vcf
+
+# Generar el índice para el archivo VCF comprimido
+tabix -p vcf vcf_multi20_NamesOk.vcf.gz
+
+# Generar un vcf para cada cromosoma (del 1 al 22) a partir del vcf.gz
+for i in {1..22}; do
+    bcftools view -O v -o chr${i}.vcf vcf_multi20_NamesOk.vcf.gz -r ${i}
+done
+
+

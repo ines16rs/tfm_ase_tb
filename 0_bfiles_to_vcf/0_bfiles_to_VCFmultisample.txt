@@ -1,0 +1,5 @@
+# Correr estos dos comandos desde el ccc estando en la carpeta de bfiles_y_vcf
+
+module load plink
+
+plink --bfile bfiles --recode vcf --out vcf_multi20

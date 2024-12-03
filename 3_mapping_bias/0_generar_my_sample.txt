@@ -1,0 +1,1 @@
+ls *.bam | sed 's/\.bam//g' > my_samples.txt

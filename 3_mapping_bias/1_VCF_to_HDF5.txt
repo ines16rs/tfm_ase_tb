@@ -1,0 +1,26 @@
+# Este código se corre desde la terminal, estando en la carpeta donde se encuentren los archivos necesarios (VCF, chromInfo, etc.) y no se manda como trabajo al ccc.
+#################################################################################
+# Descarga del archivo chromInfo.txt de UCSC:
+
+wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/chromInfo.txt.gz
+
+gunzip chromInfo.txt.gz
+
+#################################################################################
+# Generación del archivo HDF5 a partir de los VCF de los 22 cromosomas y el chromInfo.txt:
+
+/usr/local/wasp/0.3.4/snp2h5/snp2h5 --chrom chromInfo_v2.txt \
+                --format vcf \
+                --haplotype haplotypes.h5 \
+                --snp_index snp_index.h5 \
+                --snp_tab snp_tab.h5 \
+                vcfs_samples/chr*.vcf
+
+# --chrom: apunta al archivo que contiene la información de los cromosomas (chr y longitud, descargado de USCS)
+# --format vcf: indica que el formato del archivo de entrada es VCF
+# --haplotype haplotypes.h5: archivo de salida que contendrá la información de haplotipos
+# --snp_index snp_index.h5: archivo de salida que contendrá el índice de SNPs
+# --snp_tab snp_tab.h5: nombre del archivo de salida que contendrá la tabla de SNPs
+# chr*.vcf: archivos VCF de entrada, uno por cada cromosoma, generados a partir del VCF.gz general
+
+#################################################################################
