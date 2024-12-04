@@ -1,6 +1,6 @@
 # Manuales y documentación
 
-Esta carpeta contiene la documentación recopilada sobre las principales herramientas utilizadas en el desarrollo del TFM, para facilitar la implementación de la metodología desarrollada en próximos estudios. Se incluyen: manuales, la viñeta explicativa del trabajo realizado en este TFM, enlaces a los correspondientes repositorios de GitHub y artículos científicos relacionados.
+Esta carpeta contiene la documentación recopilada sobre las principales herramientas utilizadas en el desarrollo del TFM, para facilitar la implementación de la metodología desarrollada en próximos estudios. Se incluyen: manuales, la viñeta explicativa de AllelicImbalance, enlaces a los correspondientes repositorios de GitHub y artículos científicos relacionados.
 Las herramientas documentadas son:
 - *FastQC* (para la evaluación de la calidad de los datos de RNA-seq)
 - *samtools markdup* (para marcar y eliminar los duplicados en datos de RNA-seq)
