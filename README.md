@@ -53,6 +53,6 @@ A continuación, se detallan las carpetas que forman este repositorio, junto con
 - Subcarpetas con la documentación recopilada de las principales herramientas utilizadas en el desarrollo del TFM.
 
 ### Viñeta_TFM
-- Viñeta explicativa del trabajo desarrollado en este TFM (pdf y html)
+- Viñeta explicativa del trabajo desarrollado en este TFM
 ---
 
